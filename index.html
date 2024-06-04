@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Image Gallery</title>
+</head>
+
+<body>
+    <!-- <div class="full-img" id="fullImgBox">
+        <img src="images/image4.jpg" alt="Image 1" id="fullImg">
+        <span onclick="closeFullImg()">X</span>
+        <button class="nav-button prev" onclick="navigate(-1)">&#10094;</button>
+        <button class="nav-button next" onclick="navigate(1)">&#10095;</button>
+    </div> -->
+    <div class="img-text"> 
+    <h1 >Image GalleryIma
+    </h1>
+</div>
+    <div class="img-gallery">
+        <div class="img-container">
+            <img src="images/image2.jpg" alt="Image 1" onclick="openFullImg(this, 0)">
+            <div class="dark-overlay"></div>
+            <div class="img-overlay">
+                <h1 class="img-text">SPOTTED DEER</h1><br>
+                <h2 class="location">India</h2>
+                <p class="know-more">Know More
+                    <span class="svg-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="svg-icon-content">
+                            <path
+                                d="M17.5 5.999L16.793 6.706 22.086 12H1v1h21.086L16.793 18.295l0.707 0.707L24 12.499l-6.5-6.5z" />
+                        </svg>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="img-container">
+            <img src="images/image3.jpg" alt="Image 2" onclick="openFullImg(this, 1)">
+            <div class="dark-overlay"></div>
+            <div class="img-overlay">
+                <h1 class="img-text">FENNEC FOX</h1><br>
+                <h3 class="location">South Africa</h3>
+                <p class="know-more">Know More
+                    <span class="svg-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="svg-icon-content">
+                            <path
+                                d="M17.5 5.999L16.793 6.706 22.086 12H1v1h21.086L16.793 18.295l0.707 0.707L24 12.499l-6.5-6.5z" />
+                        </svg>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="img-container">
+            <img src="images/image4.jpg" alt="Image 3" onclick="openFullImg(this, 2)">
+            <div class="dark-overlay"></div>
+            <div class="img-overlay">
+                <h1 class="img-text">HUMPBACK</h1><br>
+                <h3 class="location">South Africa</h3>
+                <p class="know-more">Know More
+                    <span class="svg-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="svg-icon-content">
+                            <path
+                                d="M17.5 5.999L16.793 6.706 22.086 12H1v1h21.086L16.793 18.295l0.707 0.707L24 12.499l-6.5-6.5z" />
+                        </svg>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="img-container">
+            <img src="images/image1.jpg" alt="Image 4" onclick="openFullImg(this, 3)">
+            <div class="dark-overlay"></div>
+            <div class="img-overlay">
+                    <h1 class="img-text">COMMON </h1><br>
+                    <h3 class="location">Amazon</h3>
+                <p class="know-more">Know More
+                    <span class="svg-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="svg-icon-content">
+                            <path
+                                d="M17.5 5.999L16.793 6.706 22.086 12H1v1h21.086L16.793 18.295l0.707 0.707L24 12.499l-6.5-6.5z" />
+                        </svg>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var fullImgBox = document.getElementById('fullImgBox');
+        var fullImg = document.getElementById('fullImg');
+        var currentIndex = 0;
+        var images = document.querySelectorAll('.img-gallery img');
+
+        function openFullImg(element, index) {
+            fullImgBox.style.display = 'flex';
+            fullImg.src = element.src;
+            currentIndex = index;
+        }
+
+        function closeFullImg() {
+            fullImgBox.style.display = 'none';
+        }
+
+        function navigate(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            fullImg.src = images[currentIndex].src;
+        }
+    </script>
+</body>
+
+</html>
